@@ -1,0 +1,35 @@
+body {
+	background-color: grey;
+}
+
+h1 {
+	color: orange;
+	text-shadow: 2px 2px black;
+	text-align: center;
+	font-size: 60px;
+}
+
+#userForm {
+	text-align: center;
+	font-size: 30px;
+}
+
+input {
+	font-size: 20px;
+}
+
+input:hover {
+	background-color: orange;
+}
+
+button:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+
+button {
+	width: 70px;
+	height: 70px;
+	background-color: white;
+	border: 1px solid black;
+}

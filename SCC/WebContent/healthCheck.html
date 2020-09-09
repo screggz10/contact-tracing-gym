@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Health Check</title>
+<link rel="stylesheet" href="css/health.css" />
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/healthCheck.js"></script>
+</head>
+<body>
+	<form id="healthCheckOffaly">
+		<div>
+			<p>Please Fill in the Self-Declaration Form for Offaly</p>
+			<br>
+			<p>Are you experiencing any of the following symptoms?</p>
+			<div class="form-group">
+				<label for="fever">Fever</label><br>
+				<input type="radio" id="feverYes" value="feverYes" name="true"><label>Yes</label>
+				<input type="radio" id="feverNo" value="feverNo" name="fever"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="cough">Cough</label><br>
+				<input type="radio" id="coughYes" value="coughYes" name="cough"><label>Yes</label>
+				<input type="radio" id="coughNo" value="coughNo" name="cough"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="breathlessness">Breathlessness</label><br>
+				<input type="radio" id="breathlessYes" value="breathlessYes" name="breathless"><label>Yes</label>
+				<input type="radio" id="breathlessNo" value="breathlessNo" name="breathless"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="soreThroat">Sore Throat</label><br>
+				<input type="radio" id="soreThroatYes" value="soreThroatYes" name="soreThroat"><label>Yes</label>
+				<input type="radio" id="soreThroatNo" value="soreThroatNo" name="soreThroat"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="chestPain">Chest Pain</label><br>
+				<input type="radio" id="chestPainYes" value="chestPainYes" name="chestPain"><label>Yes</label>
+				<input type="radio" id="chestPainNo" value="chestPainNo" name="chestPain"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="closeContact">Have you been in close contact with a confirmed case of Covid-19 in the past 14 days?</label><br>
+				<input type="radio" id="confirmedCaseYes" value="confirmedCaseYes" name="confirmedCase"><label>Yes</label>
+				<input type="radio" id="confirmedCaseNo" value="confirmedCaseNo" name="confirmedCase"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="travel">Have you traveled outside of the country in the last 14 days?</label><br>
+				<input type="radio" id="travelYes" value="travelYes" name="travel"><label>Yes</label>
+				<input type="radio" id="travelNo" value="travelNo" name="travel"><label>No</label>
+			</div>
+		</div>
+		<br>
+		<div class="submitButton">
+			<button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	<form id="healthCheckWestmeath">
+	<div>
+			<p>Please Fill in the Self-Declaration Form for Westmeath</p>
+			<br>
+			<p>Are you experiencing any of the following symptoms?</p>
+			<div class="form-group">
+				<label for="fever">Fever</label><br>
+				<input type="radio" id="feverYes" value="feverYes" name="fever"><label>Yes</label>
+				<input type="radio" id="feverNo" value="feverNo" name="fever"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="cough">Cough</label><br>
+				<input type="radio" id="coughYes" value="coughYes" name="cough"><label>Yes</label>
+				<input type="radio" id="coughNo" value="coughNo" name="cough"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="breathlessness">Breathlessness</label><br>
+				<input type="radio" id="breathlessYes" value="breathlessYes" name="breathless"><label>Yes</label>
+				<input type="radio" id="breathlessNo" value="breathlessNo" name="breathless"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="soreThroat">Sore Throat</label><br>
+				<input type="radio" id="soreThroatYes" value="soreThroatYes" name="soreThroat"><label>Yes</label>
+				<input type="radio" id="soreThroatNo" value="soreThroatNo" name="soreThroat"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="chestPain">Chest Pain</label><br>
+				<input type="radio" id="chestPainYes" value="chestPainYes" name="chestPain"><label>Yes</label>
+				<input type="radio" id="chestPainNo" value="chestPainNo" name="chestPain"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="closeContact">Have you been to any of the following areas within your county? (Mullingar, Castlepollard, Moate, Kinnegad)</label><br>
+				<input type="radio" id="confirmedCaseYes" value="confirmedCaseYes" name="confirmedCase"><label>Yes</label>
+				<input type="radio" id="confirmedCaseNo" value="confirmedCaseNo" name="confirmedCase"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="travel">Have you traveled outside of the country in the last 14 days?</label><br>
+				<input type="radio" id="travelYes" value="travelYes" name="travel"><label>Yes</label>
+				<input type="radio" id="travelNo" value="travelNo" name="travel"><label>No</label>
+			</div>
+		</div>
+		<br>
+		<div class="submitButton">
+			<button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	<form id="healthCheckRoscommon">
+	<div>
+			<p>Please Fill in the Self-Declaration Form for Roscommon</p>
+			<br>
+			<p>Are you experiencing any of the following symptoms?</p>
+			<div class="form-group">
+				<label for="fever">Fever</label><br>
+				<input type="radio" id="feverYes" value="feverYes" name="fever"><label>Yes</label>
+				<input type="radio" id="feverNo" value="feverNo" name="fever"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="cough">Cough</label><br>
+				<input type="radio" id="coughYes" value="coughYes" name="cough"><label>Yes</label>
+				<input type="radio" id="coughNo" value="coughNo" name="cough"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="breathlessness">Breathlessness</label><br>
+				<input type="radio" id="breathlessYes" value="breathlessYes" name="breathless"><label>Yes</label>
+				<input type="radio" id="breathlessNo" value="breathlessNo" name="breathless"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="soreThroat">Sore Throat</label><br>
+				<input type="radio" id="soreThroatYes" value="soreThroatYes" name="soreThroat"><label>Yes</label>
+				<input type="radio" id="soreThroatNo" value="soreThroatNo" name="soreThroat"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="chestPain">Chest Pain</label><br>
+				<input type="radio" id="chestPainYes" value="chestPainYes" name="chestPain"><label>Yes</label>
+				<input type="radio" id="chestPainNo" value="chestPainNo" name="chestPain"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="closeContact">Have you been in close contact with a confirmed case of Covid-19 in the past 14 days?</label><br>
+				<input type="radio" id="confirmedCaseYes" value="confirmedCaseYes" name="confirmedCase"><label>Yes</label>
+				<input type="radio" id="confirmedCaseNo" value="confirmedCaseNo" name="confirmedCase"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="travel">Have you been to any of the following areas within your county? (Roscommon Town, Boyle, Strokestown)</label><br>
+				<input type="radio" id="travelYes" value="travelYes" name="travel"><label>Yes</label>
+				<input type="radio" id="travelNo" value="travelNo" name="travel"><label>No</label>
+			</div>
+	</div>
+		<br>
+		<div class="submitButton">
+			<button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	<form id="healthCheckGalway">
+	<div>
+			<p>Please Fill in the Self-Declaration Form for Galway</p>
+			<br>
+			<p>Are you experiencing any of the following symptoms?</p>
+			<div class="form-group">
+				<label for="fever">Fever</label><br>
+				<input type="radio" id="feverYes" value="feverYes" name="fever"><label>Yes</label>
+				<input type="radio" id="feverNo" value="feverNo" name="fever"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="cough">Cough</label><br>
+				<input type="radio" id="coughYes" value="coughYes" name="cough"><label>Yes</label>
+				<input type="radio" id="coughNo" value="coughNo" name="cough"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="breathlessness">Breathlessness</label><br>
+				<input type="radio" id="breathlessYes" value="breathlessYes" name="breathless"><label>Yes</label>
+				<input type="radio" id="breathlessNo" value="breathlessNo" name="breathless"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="soreThroat">Sore Throat</label><br>
+				<input type="radio" id="soreThroatYes" value="soreThroatYes" name="soreThroat"><label>Yes</label>
+				<input type="radio" id="soreThroatNo" value="soreThroatNo" name="soreThroat"><label>No</label>
+			</div>
+			<div class="form-group">
+				<label for="chestPain">Chest Pain</label><br>
+				<input type="radio" id="chestPainYes" value="chestPainYes" name="chestPain"><label>Yes</label>
+				<input type="radio" id="chestPainNo" value="chestPainNo" name="chestPain"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="closeContact">Have you been in contact with anyone that works in the following factories?</label><br>
+				<input type="radio" id="confirmedCaseYes" value="confirmedCaseYes" name="confirmedCase"><label>Yes</label>
+				<input type="radio" id="confirmedCaseNo" value="confirmedCaseNo" name="confirmedCase"><label>No</label>
+			</div>
+			<br>
+			<div class="form-group">
+				<label for="travel">Have you traveled outside of the country in the last 14 days?</label><br>
+				<input type="radio" id="travelYes" value="travelYes" name="travel"><label>Yes</label>
+				<input type="radio" id="travelNo" value="travelNo" name="travel"><label>No</label>
+			</div>
+		</div>
+		<br>
+		<div class="submitButton">
+			<button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	<form id="healthCheckKildare">
+	<p>Heath Check Unavailable Due to Covid Restrictions</p>
+	</form>
+</body>
+</html>

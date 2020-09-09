@@ -1,0 +1,66 @@
+body {
+	background-color: grey;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-size: 50px;
+}
+
+.btn-group {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	left: 45%;
+	
+}
+
+.btn-group button {
+	height: 50px;
+	width: 50px;
+}
+
+.btn-group button:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+
+#checkInForm {
+	text-align: center;
+	font-size: 50px;
+}
+
+#checkInForm input {
+	text-align: center;
+	height: 30px;
+}
+
+#login {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	left: 47%;
+	margin: 10px;
+}
+
+#login:hover {
+	background-color: orange;
+	cursor: pointer;
+}
+
+#logout {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	left: 47%;
+	margin: 10px;
+}
+
+#logout:hover {
+	background-color: orange;
+	cursor: pointer;
+}
