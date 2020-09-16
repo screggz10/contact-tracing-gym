@@ -1,22 +1,17 @@
-var rootURL = "http://localhost:8080/SCC/rest/checkin";
-var rootURLnew = "http://localhost:8080/SCC/rest/checkout";
+var checkInURL = "http://localhost:8080/SCC/rest/checkin";
+var checkOutURL = "http://localhost:8080/SCC/rest/checkout";
 
-$(document).ready(function(){
-	findAll();
-	findAllnew();
-})
-
-var findAll = function(){
+var findAllCheckIn = function(){
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
-		url: rootURL,
+		url: checkInURL,
 		dataType: "json",
-		success: renderList	
+		success: renderListCheckIn
 	});
 };
 
-var renderList = function(data){
+var renderListCheckIn = function(data){
 	var list=data;
 	console.log("response");
 	$.each(list, function(index, checkIn){
@@ -25,17 +20,17 @@ var renderList = function(data){
 	$('#checkInTable').DataTable();
 }
 
-var findAllnew = function(){
+var findAllCheckOut = function(){
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
-		url: rootURLnew,
+		url: checkOutURL,
 		dataType: "json",
 		success: renderListnew
 	});
 };
 
-var renderListnew = function(data){
+var renderListCheckOut = function(data){
 	var list=data;
 	console.log("response");
 	$.each(list, function(index, checkOut){
@@ -43,3 +38,8 @@ var renderListnew = function(data){
 	});
 	$('#checkOutTable').DataTable();
 }
+
+$(document).ready(function(){
+	findAllCheckIn();
+	findAllCheckOut();
+})

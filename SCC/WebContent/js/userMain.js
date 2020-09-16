@@ -1,4 +1,4 @@
-var rootURL = "http://localhost:8080/SCC/rest/user";
+var userURL = "http://localhost:8080/SCC/rest/user";
 
 // create user
 var addUser = function() {
@@ -6,7 +6,7 @@ var addUser = function() {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : rootURL,
+		url : userURL,
 		dataType : "json",
 		data : formToJSON(),
 		success : function(data, textStatus, jqXHR) {
@@ -37,7 +37,7 @@ var findAll = function(){
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
-		url: rootURL,
+		url: userURL,
 		dataType: "json",
 		success: renderList	
 	});

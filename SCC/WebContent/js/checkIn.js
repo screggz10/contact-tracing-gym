@@ -1,18 +1,5 @@
-var rootURL = "http://localhost:8080/SCC/rest/checkin";
-var rootURLnew = "http://localhost:8080/SCC/rest/checkout";
-
-$(document).ready(function() {
-	
-	if($("#no").click(function(){
-		login();
-	}));
-	if($("#yes").click(function(){
-		$("#covid").hide();
-		$("#second").append("<p>Get out of the Gym......CANT!!!!!!</p>")
-	}));
-	
-	$("#signIn").hide();
-});
+var checkInURL = "http://localhost:8080/SCC/rest/checkin";
+var checkOutURL = "http://localhost:8080/SCC/rest/checkout";
 		
 var login = function() {
 	$("#covid").hide();
@@ -32,7 +19,7 @@ var login = function() {
 							const LAT = latitude;
 							const LONG = longitude;
 							
-							const KEY = "AIzaSyBn6dOEaz9qx-AVGodVH3TViHUx4pulURs";
+							const KEY = "MyKey";
 							let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LONG}&key=${KEY}`;
 							
 							fetch(url)
@@ -75,9 +62,9 @@ var addCheckIn = function() {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : rootURL,
+		url : checkInURL,
 		dataType : "json",
-		data : formToJSON(),
+		data : formToJSONcheckIn(),
 		success : function(data, textStatus, jqXHR) {
 			alert('CheckIn Time Added');
 		},
@@ -92,9 +79,9 @@ var addCheckOut = function() {
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : rootURLnew,
+		url : checkOutURL,
 		dataType : "json",
-		data : formToJSON2(),
+		data : formToJSONcheckOut(),
 		success : function(data, textStatus, jqXHR) {
 			alert('CheckOut Time Added');
 		},
@@ -104,7 +91,7 @@ var addCheckOut = function() {
 	});
 };
 
-var formToJSON = function(){
+var formToJSONcheckIn = function(){
 	var c = new Date();
 	var clock = c.toLocaleTimeString();
 	
@@ -117,7 +104,7 @@ var formToJSON = function(){
 	});
 };
 
-var formToJSON2 = function(){
+var formToJSONcheckOut = function(){
 	var c = new Date();
 	var clock = c.toLocaleTimeString();
 	
@@ -129,6 +116,19 @@ var formToJSON2 = function(){
 		"checkOutDate" : date
 	});
 };
+
+$(document).ready(function() {
+	
+	if($("#no").click(function(){
+		login();
+	}));
+	if($("#yes").click(function(){
+		$("#covid").hide();
+		$("#second").append("<p>Please leave</p>")
+	}));
+	
+	$("#signIn").hide();
+});
 
 
 

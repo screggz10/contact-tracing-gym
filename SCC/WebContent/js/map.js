@@ -1,6 +1,20 @@
 //define the points of the area (lat and long)
 // latitude up and down
 // longitude across
+var mapArea = [
+	[53.4239, -7.9407],
+	[53.5259, -7.3381],
+	[53.0328, -7.2988],
+	[53.0928, -8.2185] 
+];
+
+var insideMap = function(){
+	alert("You are located inside the area");
+};
+
+var outsideMap = function(){
+	alert("You are located outside the area");
+};
 
 // showing field and current location on map
 function initMap() {
@@ -40,11 +54,8 @@ function initMap() {
 	// marker for current position
 	navigator.geolocation.getCurrentPosition(initialize, fail);
 
-	// outside map, Galway
-//	 isPointInside( [53.2707, -9.0568] , mapArea);
 	function initialize(position) {
-		var myLatLng = new google.maps.LatLng(53.2707, -9.0568);
-		//var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		new google.maps.Marker({
 			position : myLatLng,
 			map : map
@@ -79,20 +90,12 @@ function isPointInside(point, vs) {
 	
 };
 
-var mapArea = [
-	[53.4239, -7.9407],
-	[53.5259, -7.3381],
-	[53.0328, -7.2988],
-	[53.0928, -8.2185] ];
-
 function whereIsLocation() {
 	// get position
 	navigator.geolocation.getCurrentPosition(initialize, fail);
 
 	function initialize(position) {
-		// outside map, Galway
-		var result = isPointInside( [53.2707, -9.0568] , mapArea);
-		//var result = isPointInside([position.coords.latitude,position.coords.longitude], mapArea);
+		var result = isPointInside([position.coords.latitude,position.coords.longitude], mapArea);
 		if(result == true){
 			insideMap();
 		}
@@ -107,16 +110,9 @@ function whereIsLocation() {
 	}
 }
 
+
 $(document).ready(function() {
 	$('#insideField').click(function() {
 		whereIsLocation();
 	});
 })
-
-var insideMap = function(){
-	alert("You are located inside the area");
-};
-
-var outsideMap = function(){
-	alert("You are located outside the area");
-};

@@ -1,4 +1,4 @@
-var rootURL = "http://localhost:8080/SCC/rest/healthcheck";
+var healthCheckURL = "http://localhost:8080/SCC/rest/healthcheck";
 
 var getLocation = function(){
 	if(navigator.geolocation){
@@ -9,7 +9,7 @@ var getLocation = function(){
 			const LAT = latitude;
 			const LONG = longitude;
 			
-			const KEY = "AIzaSyBn6dOEaz9qx-AVGodVH3TViHUx4pulURs";
+			const KEY = "myKey";
 			let url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${LAT},${LONG}&key=${KEY}`;
 			
 			fetch(url)
@@ -51,30 +51,12 @@ var getLocation = function(){
 	}
 };
 
-
-
-$(document).ready(function() {
-	
-	$("#healthCheckOffaly").hide();
-	$("#healthCheckWestmeath").hide();
-	$("#healthCheckRoscommon").hide();
-	$("#healthCheckGalway").hide();
-	$("#healthCheckKildare").hide();
-	
-	getLocation();
-	
-	if($("#btnSubmit").click(function(){
-		addHealthCheck();
-	}));
-	
-});
-
 var addHealthCheck = function() {
 	console.log('addHealthCheck');
 	$.ajax({
 		type : 'POST',
 		contentType : 'application/json',
-		url : rootURL,
+		url : healthCheckURL,
 		dataType : "json",
 		data : formToJSON(),
 		success : function(data, textStatus, jqXHR) {
@@ -113,3 +95,19 @@ var formToJSON = function(){
 		"date" : date
 	});
 };
+
+$(document).ready(function() {
+	
+	$("#healthCheckOffaly").hide();
+	$("#healthCheckWestmeath").hide();
+	$("#healthCheckRoscommon").hide();
+	$("#healthCheckGalway").hide();
+	$("#healthCheckKildare").hide();
+	
+	getLocation();
+	
+	if($("#btnSubmit").click(function(){
+		addHealthCheck();
+	}));
+	
+});
